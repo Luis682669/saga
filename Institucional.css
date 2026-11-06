@@ -1,0 +1,61 @@
+/* SAGA · estilo institucional (sobrio, alto contraste, colores de la bandera de Panamá) */
+:root{
+  --navy:#0a2f6b; --navy-d:#071f48; --red:#d21034; --ink:#1c2733; --muted:#566273;
+  --line:#d5dce6; --bg:#f1f3f6;
+  --bs-primary:#0a2f6b; --bs-primary-rgb:10,47,107;
+  --bs-link-color:#0a2f6b; --bs-link-hover-color:#071f48; --bs-body-color:#1c2733;
+}
+body{min-height:100vh;color:var(--ink);background:var(--bg);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+.skip-link{position:absolute;left:-999px;top:8px;z-index:100;padding:8px 14px;background:#fff;color:var(--navy);font-weight:600}
+.skip-link:focus{left:8px}
+
+/* Franja tricolor y encabezado */
+.gov-band{height:8px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,var(--red) 0 33.4%,#fff 33.4% 66.6%,var(--navy) 66.6%)}
+.topbar{background:#fff;border-bottom:1px solid var(--line)}
+.escudo{width:42px;height:50px;flex:none;color:var(--navy)}
+.inst-sub{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.inst-name{font-size:1.2rem;font-weight:700;line-height:1.2;color:var(--navy)}
+.clock{font-size:1.65rem;font-weight:700;line-height:1;color:var(--navy);font-variant-numeric:tabular-nums}
+
+/* Tarjetas */
+.main-card,.panel-card,.login-card{border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;background:#fff;box-shadow:0 1px 4px #1c27331a}
+.login-card{width:100%;max-width:440px;padding:36px}
+.login-body{display:grid;place-items:center;padding:24px}
+.login-body .gov-band{position:fixed;inset:0 0 auto}
+.main-card{overflow:hidden}
+.form-panel{padding:clamp(24px,5vw,48px)}
+.section-tag{display:inline-block;margin-bottom:12px;padding:4px 10px;border-left:4px solid var(--red);background:#eef2f8;color:var(--navy);font-size:.75rem;font-weight:700;letter-spacing:.08em}
+.notice{padding:10px 14px;border-left:4px solid var(--red);background:#fdf2f4;color:#5a1020;font-size:.85rem}
+
+/* Formularios y botones */
+.form-label{color:#26354a;font-size:.9rem;font-weight:600}
+.step-number{display:inline-grid;place-items:center;width:26px;height:26px;margin-right:9px;border-radius:50%;background:var(--navy);color:#fff;font-size:.8rem;font-weight:700}
+.form-control,.form-select{min-height:46px;border:1px solid #8693a5;border-radius:4px}
+.form-control:focus,.form-select:focus{border-color:var(--navy);box-shadow:0 0 0 .2rem #0a2f6b33}
+.btn{border-radius:4px;font-weight:600}
+.btn.rounded-pill,.badge.rounded-pill{border-radius:4px!important}
+.btn-primary{--bs-btn-bg:var(--navy);--bs-btn-border-color:var(--navy);--bs-btn-hover-bg:var(--navy-d);--bs-btn-hover-border-color:var(--navy-d);--bs-btn-active-bg:var(--navy-d);--bs-btn-active-border-color:var(--navy-d);--bs-btn-disabled-bg:#6b82ab;--bs-btn-disabled-border-color:#6b82ab}
+.btn-outline-primary{--bs-btn-color:var(--navy);--bs-btn-border-color:var(--navy);--bs-btn-hover-bg:var(--navy);--bs-btn-hover-border-color:var(--navy);--bs-btn-active-bg:var(--navy);--bs-btn-active-border-color:var(--navy)}
+.message{min-height:24px;font-size:.92rem}
+.help-note{color:var(--muted);font-size:.82rem}
+
+/* Panel de cámara */
+.camera-panel{display:flex;flex-direction:column;justify-content:center;min-height:100%;padding:clamp(24px,5vw,40px);color:#fff;background:var(--navy)}
+.camera-caption{color:#c3d0e6;font-size:.9rem}
+.camera-frame{position:relative;overflow:hidden;aspect-ratio:4/3;border:2px solid #ffffff40;border-radius:4px;background:#061633}
+.camera-frame video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)} /* solo la vista previa va en espejo */
+.camera-placeholder{position:absolute;inset:0;display:grid;place-items:center;padding:20px;color:#c3d0e6;text-align:center;background:#061633}
+.camera-frame.active .camera-placeholder{display:none}
+.camera-icon{display:block;margin-bottom:12px;font-size:2rem}
+
+/* Panel administrativo */
+.nav-pills{gap:4px;border-bottom:2px solid var(--line)}
+.nav-pills .nav-link{border-radius:4px 4px 0 0;color:var(--muted);font-weight:600}
+.nav-pills .nav-link.active{background:var(--navy);color:#fff}
+.table thead th{padding:13px 14px;border:0;background:#e8edf4;color:var(--navy);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.table tbody td{padding:12px 14px;border-color:#e6eaf0;vertical-align:middle}
+.thumb{cursor:zoom-in}
+.site-footer{border-top:1px solid var(--line);background:#fff;color:var(--muted);font-size:.82rem}
+
+@media (max-width:767.98px){.camera-panel{min-height:auto}.clock{font-size:1.3rem}}
